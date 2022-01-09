@@ -28,12 +28,12 @@
   </project>
 
   <!-- external repos-->
-  <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="kscope" />
-  <project path="external/exfatprogs" name="android_external_exfatprogs" remote="kscope" />
-  <project path="external/gptfdisk" name="android_external_gptfdisk" remote="kscope" />
-  <project path="external/json-c" name="android_external_json-c" remote="kscope" />
-  <project path="external/mksh" name="android_external_mksh" remote="kscope" />
-  <project path="external/tinycompress" name="android_external_tinycompress" remote="kscope" />
+  <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="kscope-tmp" />
+  <project path="external/exfatprogs" name="android_external_exfatprogs" remote="kscope-tmp" />
+  <project path="external/gptfdisk" name="android_external_gptfdisk" remote="kscope-tmp" />
+  <project path="external/json-c" name="android_external_json-c" remote="kscope-tmp" />
+  <project path="external/mksh" name="android_external_mksh" remote="kscope-tmp" />
+  <project path="external/tinycompress" name="android_external_tinycompress" remote="kscope-tmp" />
 
   <!-- hardware repos -->
   <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" remote="kscope" />
