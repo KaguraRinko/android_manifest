@@ -12,6 +12,11 @@
            fetch="https://github.com/P-KScope"
            revision="refs/heads/sunflower" />
 
+  <remote  name="arrow"
+           fetch="https://github.com/ArrowOS"
+           review="https://review.arrowos.net/"
+           revision="refs/heads/arrow-12.0" />
+
   <project path="manifest" name="android_manifest" remote="kscope" />
   <project path="build/make" name="android_build" groups="pdk" remote="kscope-tmp" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -37,6 +42,19 @@
 
   <!-- hardware repos -->
   <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" remote="kscope" />
+  <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" remote="arrow" >
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- for AOSP sdm845 and sm8150, we override os_pickup.mk -->
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sm8150/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+  </project>
+  <project path="hardware/qcom-caf/sm8250/audio" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="arrow" revision="arrow-12.0-caf-sm8250" />
+  <project path="hardware/qcom-caf/sm8250/display" name="android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="arrow" revision="arrow-12.0-caf-sm8250" />
+  <project path="hardware/qcom-caf/sm8250/media" name="android_hardware_qcom_media" groups="qcom" remote="arrow" revision="arrow-12.0-caf-sm8250" />
 
   <!-- prebuilts repos -->
   <project path="prebuilts/tools-kscope" name="android_prebuilts_tools-kscope" remote="kscope" />
