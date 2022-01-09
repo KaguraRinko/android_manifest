@@ -27,6 +27,12 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
 
+  <!-- external repos-->
+  <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="kscope" />
+  <project path="external/gptfdisk" name="android_external_gptfdisk" remote="kscope" />
+  <project path="external/mksh" name="android_external_mksh" remote="kscope" />
+  <project path="external/tinycompress" name="android_external_tinycompress" remote="kscope" />
+
   <!-- hardware repos -->
   <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" remote="kscope" />
 
